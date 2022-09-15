@@ -1,0 +1,21 @@
+:root{
+
+--primary-color: hsl(215, 51%, 70%)
+--secondary-color: hsl(178, 100%, 50%)
+
+--dark-color: hsl(217, 54%, 11%)
+--dark-color-2 (card BG): hsl(216, 50%, 16%)
+--dark-color-3 (line): hsl(215, 32%, 27%)
+--white-color: hsl(0, 0%, 100%)
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Outfit', sans-serif;
+}
