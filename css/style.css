@@ -1,12 +1,12 @@
 :root{
 
---primary-color: hsl(215, 51%, 70%)
---secondary-color: hsl(178, 100%, 50%)
+--primary-color: hsl(215, 51%, 70%);
+--secondary-color: hsl(178, 100%, 50%);
 
---dark-color: hsl(217, 54%, 11%)
---dark-color-2 (card BG): hsl(216, 50%, 16%)
---dark-color-3 (line): hsl(215, 32%, 27%)
---white-color: hsl(0, 0%, 100%)
+--dark-color: hsl(217, 54%, 11%); /*(main BG)*/
+--dark-color-2: hsl(216, 50%, 16%); /*(card BG)*/
+--dark-color-3: hsl(215, 32%, 27%); /*(line)*/
+--white-color: hsl(0, 0%, 100%);
 
 }
 *{
@@ -18,4 +18,124 @@
 html{
     font-size: 62.5%;
     font-family: 'Outfit', sans-serif;
+    background-color: var(--dark-color);
+}
+main{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 0 2.4rem;
+    grid-template-rows: 1fr 50px;
+}
+h1{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--white-color);
+    margin-bottom: 1.8rem;
+}
+p{
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 2.4rem;
+    line-height: 2.4rem;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    transition: color .2s ease-in-out;
+}
+a:hover{
+    color:var(--secondary-color);
+}
+
+/* ----- NTF Card ----- */
+
+.ntf-card{
+    background-color: var(--dark-color-2);
+    max-width: 350px;
+    border-radius: 1.6rem;
+    padding: 2.4rem;
+    box-shadow: 0 1.6rem 3.2rem hsla(0, 0%, 0%, 0.15);
+}
+.ntf-card__img-preview::before{
+    content: url(../images/icon-view.svg);
+    background-color: hsl(178, 100%, 50%, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    opacity: 0;
+    transition: opacity .5s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+.ntf-card__img-preview:hover::before{
+    opacity: 1;
+}
+.ntf-card__img-preview{
+    position: relative;
+}
+.ntf-card__img{
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    vertical-align: top;
+}
+.ntf-card__title{
+    margin-top: 2.4rem;
+}
+.ntf-card__details{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--dark-color-3);
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+.ntf-card__price{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+.ntf-card__price::before{
+    content: url(../images/icon-ethereum.svg);
+    vertical-align: text-top;
+    margin-right: 0.6rem;
+}
+
+.ntf-card__time::before{
+    content: url(../images/icon-clock.svg);
+    vertical-align: middle;
+    margin-right: 0.6rem;
+}
+.ntf-card__author{
+    display: flex;
+    align-items: center;
+}
+.ntf-card__author-img{
+    border: 1px solid var(--white-color);
+    border-radius: 1.6rem;
+    margin-right: 1.6rem;
+}
+.ntf-card__author-name{
+    margin: 0;
+    font-size: 1.6rem;
+}
+.ntf-card__author-link{
+    color: var(--white-color);
+}
+
+/* ----- Attribution ----- */
+.attribution{
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+.attribution a{
+    color: var(--secondary-color);
+    text-decoration: underline;
 }
